@@ -1,0 +1,19 @@
+{
+  "name": "minghinlo",
+  "version": "0.1.0",
+  "description": "Personal Portfolio Website",
+  "repository": "https://github.com/lolo8vbdjsk81a/minghinlo.me.git",
+  "author": "Lo Ming Hin <leo@minghinlo.me>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "three": "^0.176.0",
+	"mathlive": "^0.108.0"
+  }
+}
