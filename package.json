@@ -5,6 +5,7 @@
   "repository": "https://github.com/lolo8vbdjsk81a/minghinlo.me.git",
   "author": "Lo Ming Hin <leo@minghinlo.me>",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "start": "node server.js"
   },
