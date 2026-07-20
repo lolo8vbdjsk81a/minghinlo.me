@@ -13,3 +13,5 @@ Thumbs.db
 # Build output
 dist/
 build/
+
+deploy.log

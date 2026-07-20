@@ -1,0 +1,18 @@
+services:
+  lolo-homepage:
+    image: lolo/homepage:latest
+    container_name: lolo-homepage
+    restart: always
+    environment:
+      - VIRTUAL_HOST=minghinlo.me,www.minghinlo.me
+      - LETSENCRYPT_HOST=minghinlo.me,www.minghinlo.me
+      - LETSENCRYPT_EMAIL=${LETSENCRYPT_EMAIL}
+      - VIRTUAL_PORT=3000
+    expose:
+      - "3000"
+    networks:
+      - nginx-proxy-net
+
+networks:
+  nginx-proxy-net:
+    external: true
