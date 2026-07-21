@@ -1,5 +1,6 @@
 services:
   lolo-homepage:
+    build: .
     image: lolo/homepage:latest
     container_name: lolo-homepage
     restart: always
