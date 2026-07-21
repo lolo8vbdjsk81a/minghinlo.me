@@ -26,5 +26,6 @@ jobs:
           ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} "
             cd ~/docker/minghinlo.me &&
             git pull &&
-            docker compose up --build --force-recreate -d
+            docker compose down &&
+            docker compose up --build -d
           "
