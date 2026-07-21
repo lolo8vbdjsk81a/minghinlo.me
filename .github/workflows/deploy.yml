@@ -24,7 +24,7 @@ jobs:
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
           ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} "
-            cd ~/docker/lolo-homepage &&
+            cd ~/docker/minghinlo.me &&
             git pull &&
             docker compose up --build --force-recreate -d
           "
