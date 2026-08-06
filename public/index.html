@@ -4,15 +4,29 @@
 	<title>Lolo's playground</title>
 	<link rel="icon" type="image/x-icon" href="assets/images/junko.ico">
   <style>
+    @font-face {
+      font-family: 'Manrope';
+      src: url('fonts/Manrope-VariableFont_wght.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+    :root {
+      --global-text: #4e6670;
+      --global-border: #4e6670;
+    }
     header img {
       width: 450px;
       max-width: 100%;
       display: block;
       margin: 0 auto;
-      border: 2px solid #333;
+      border: 2px solid var(--global-border);
     }
     body {
       margin: 0 20px;
+      background-color: #f2fbff;
+      font-family: 'Manrope', sans-serif;
+      color: var(--global-text);
     }
     .about {
       display: flex;
@@ -26,9 +40,12 @@
       width: 120px;
       display: block;
       border-radius: 50%;
-      border: 2px solid #333;
+      border: 2px solid var(--global-border);
     }
     .project-button {
+    }
+    a, a:visited, a:hover, a:active {
+      color: inherit;
     }
   </style>
 </head>
