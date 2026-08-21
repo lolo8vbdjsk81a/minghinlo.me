@@ -3,77 +3,78 @@
 <head>
 	<title>Lolo's playground</title>
 	<link rel="icon" type="image/x-icon" href="assets/images/junko.ico">
-  <style>
-    @font-face {
-      font-family: 'Manrope';
-      src: url('fonts/Manrope-VariableFont_wght.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-      font-display: swap;
-    }
-    :root {
-      --global-text: #4e6670;
-      --global-border: #4e6670;
-    }
-    header img {
-      width: 450px;
-      max-width: 100%;
-      display: block;
-      margin: 0 auto;
-      border: 2px solid var(--global-border);
-    }
-    body {
-      margin: 0 20px;
-      background-color: #f2fbff;
-      font-family: 'Manrope', sans-serif;
-      color: var(--global-text);
-    }
-    .about {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-    .profile-text {
-      flex: 1;
-    }
-    .avatar img {
-      width: 120px;
-      display: block;
-      border-radius: 50%;
-      border: 2px solid var(--global-border);
-    }
-    .project-button {
-    }
-    a, a:visited, a:hover, a:active {
-      color: inherit;
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header>
-    <img src="assets/images/header.jpg" alt="Header">
+    <div class='container'>
+      <div class="logo-area">
+        <div class="logo">
+          <a href="/">MINGHINLO.ME</a>
+        </div>
+        <div class="external-links">
+          <a href="https://github.com/lolo8vbdjsk81a/" target="_blank">GitHub</a>
+          <a href="https://www.pixiv.net/en/users/22227622" target="_blank">Pixiv</a>
+        </div>
+      </div>
+    </div>
+    <!-- <img src="assets/images/header.jpg" alt="Header"> -->
   </header>
-  <h1>Good morning everyone, my name is Lolo.</h1>
+  <nav class="nav">
+    <a href="#">HOME</a>
+    <a href="#abouts">ABOUT</a>
+    <a href="#project">PROJECTS</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+
 	<hr>
-  <h2>About</h2>
-  <div class="about">
-    <div class="about-text"><p>Former HKU SPACE associate degree student, current HKUST BEng Computer Science student. Interest includes but not limited to computer stuffs, mathematics, and digital art. Also self-learning Japanese right now, preparing for next N3 exam.</p></div>
-    <div class="avatar"><img src="assets/images/avatar.png" alt="Avatar"></div>
-  </div>
-  <hr>
-  <h2>Now</h2>
-    <div class="now-text">Currently doing a one year internship at Hospital Authority.</div>
-	<hr>
-	<h2>Projects</h2>
-    <div class="project-button"><a href="./HTML5Grid.html">VisualAlgebra</a></div>
-	<hr>
+
+  <main>
+    <section id="about" class="section about">
+      <div class="container">
+        <h2>About</h2>
+        <div class="aboutContent">
+          <div class="avatar"><img src="assets/images/avatar.png" alt="Avatar"></div>
+          <div class="aboutText">
+            <p>
+              Former HKU SPACE associate degree student, current HKUST BEng Computer Science student. Interest includes but not limited to computer stuffs, mathematics, and digital art. Also self-learning Japanese right now, preparing for next N3 exam.
+            </p>
+            <p>
+              Currently doing a one year internship at Hospital Authority.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="projects" class="section projects">
+      <div class="container">
+	      <h2>Projects</h2>
+        <div class="project-button"><a href="./HTML5Grid.html">VisualAlgebra</a></div>
+      </div>
+    </section>
+    
+    <section id="contact" class="section contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <p><b>Email:</b>
+          <br>
+          &emsp;&#9670; <a href="mailto:minghinlo21@gmail.com">minghinlo21@gmail.com</a>
+          <br>
+          &emsp;&#9670; <a href="mailto:mhloag@connect.ust.hk">mhloag@connect.ust.hk</a>
+          <br>
+          &emsp;&#9670; <a href="mailto:leo@minghinlo.me">leo@minghinlo.me</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
 	<footer>
-    <p>Contact Me: <a href="mailto:minghinlo21@gmail.com">minghinlo21@gmail.com</a> || <a href="mailto:mhloag@connect.ust.hk">mhloag@connect.ust.hk</a> || <a href="mailto:leo@minghinlo.me">leo@minghinlo.me</a> </p>
-    <p>
-    <a href="https://github.com/lolo8vbdjsk81a/" target="_blank">GitHub</a> <a href="https://www.pixiv.net/en/users/22227622" target="_blank">Pixiv</a>
-    </p>
-		<p>&copy; 2024-2026 Lolo. All rights reserved.</p>
-    <p><a href="pages/visualalgebra-privacy-policy.html">VisualAlgebra Privacy Policy</a></p>
+    <div class="footerContainer">
+		  <p>&copy; 2024-2026 Lolo. All rights reserved.</p>
+      <!--<p><a href="pages/visualalgebra-privacy-policy.html">VisualAlgebra Privacy Policy</a></p>-->
+    </div>
 	</footer>
 
 </body>

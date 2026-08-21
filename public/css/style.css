@@ -1,0 +1,148 @@
+@font-face {
+  font-family: 'Manrope';
+  src: url('../fonts/Manrope/Manrope-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Comfortaa';
+  src: url('../fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --global-text: #4e6670;
+  --global-border: #4e6670;
+  --bg: #f2fbff;
+  --bg-2: #E4ECF0;
+  --footer: #FFFFFF;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html {
+  font-size: 100%;
+}
+
+h1, h2, h3 {
+  font-family: 'Comfortaa', sans-serif;
+}
+
+body {
+  background-color: #f2fbff;
+  font-family: 'Manrope', sans-serif;
+  color: var(--global-text);
+  letter-spacing: 0.03em;
+}
+
+.container {
+  padding: 0 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  padding: 2rem 0 0 0;
+  letter-spacing: 0.08em;
+}
+header img {
+  width: 450px;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  border: 2px solid var(--global-border);
+}
+.logo-area {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Comfortaa', sans-serif;
+  align-items: flex-end;
+  gap: 2rem;
+}
+.logo a {
+  font-size: 2rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.external-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: var(--bg);
+  display: flex;
+  justify-content: center;
+  letter-spacing: 0.08em;
+  padding: 1rem 0;
+}
+.nav a {
+  font-size: 1rem;
+  padding: 0 1.125rem;
+  text-decoration: none;
+}
+
+
+section {
+  background-color: var(--bg);
+}
+section:nth-child(odd) {
+  background-color: var(--bg-2);
+}
+
+.section {
+  padding: 2rem 0;
+  scroll-margin-top: 3.5rem;
+}
+.section h2 {
+  margin-bottom: 1.5rem;
+}
+
+.about {
+  background-color: var(--bg);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.avatar img {
+  width: 120px;
+  display: block;
+}
+.aboutContent {
+  display: flex;
+  gap: 2rem;
+}
+.aboutText p {
+  margin-bottom: 1rem;
+}
+
+.contact {
+  background-color: var(--bg);
+}
+
+a, a:visited, a:hover, a:active {
+  color: inherit;
+}
+
+footer {
+  min-height: 100vh;
+  background-color: var(--footer);
+  display: flex;
+  justify-content: center;
+}
+
+.footerContainer {
+  padding: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
