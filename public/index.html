@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Lolo's playground</title>
-	<link rel="icon" type="image/x-icon" href="assets/images/junko.ico">
+  <title>Lolo's playground</title>
+  <link rel="icon" type="image/x-icon" href="assets/images/junko.ico">
   <link rel="stylesheet" href="css/style.css">
+  <script src="assets/js/pageload.js" defer></script>
 </head>
 <body>
+  <div class="page-loader">
+    <div class="spinner"></div>
+  </div>
+
   <header>
     <div class='container'>
       <div class="logo-area">
         <div class="logo">
+		  <img src="assets/images/logo.png" alt="Logo">
           <a href="/">MINGHINLO.ME</a>
         </div>
         <div class="external-links">
@@ -22,8 +28,8 @@
   </header>
   <nav class="nav">
     <a href="#">HOME</a>
-    <a href="#abouts">ABOUT</a>
-    <a href="#project">PROJECTS</a>
+    <a href="#about">ABOUT</a>
+    <a href="#projects">PROJECTS</a>
     <a href="#contact">CONTACT</a>
   </nav>
 
@@ -37,7 +43,7 @@
           <div class="avatar"><img src="assets/images/avatar.png" alt="Avatar"></div>
           <div class="aboutText">
             <p>
-              Former HKU SPACE associate degree student, current HKUST BEng Computer Science student. Interest includes but not limited to computer stuffs, mathematics, and digital art. Also self-learning Japanese right now, preparing for next N3 exam.
+              HKUST BEng Computer Science year 2 student. Former HKU SPACE associate degree student. Interest includes but not limited to computer stuffs, mathematics, and digital art. Also self-learning Japanese right now, preparing for next N3 exam.
             </p>
             <p>
               Currently doing a one year internship at Hospital Authority.
@@ -71,10 +77,13 @@
   </main>
 
 	<footer>
-    <div class="footerContainer">
-		  <p>&copy; 2024-2026 Lolo. All rights reserved.</p>
-      <!--<p><a href="pages/visualalgebra-privacy-policy.html">VisualAlgebra Privacy Policy</a></p>-->
-    </div>
+	  <div class="container">
+    	<div class="footerContainer">
+			<img src="assets/images/footer-lolo.png" alt="footer-lolo">
+			<p>&copy; 2024-2026 Lolo. All rights reserved.</p>
+    	  <!--<p><a href="pages/visualalgebra-privacy-policy.html">VisualAlgebra Privacy Policy</a></p>-->
+    	</div>
+	  </div>
 	</footer>
 
 </body>
