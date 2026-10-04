@@ -128,6 +128,24 @@ section:nth-child(odd) {
   margin-bottom: 1rem;
 }
 
+.project-button a,
+.playground-button a {
+  display: block;
+  padding: 22px 10px;
+  text-decoration: none;
+  border: 2px solid var(--global-border);
+  text-align: center;
+  color: var(--global-text);
+  background: var(--bg);
+  transition: background 0.12s, color 0.12s;
+}
+
+.project-button a:hover,
+.playground-button a:hover {
+  background: var(--global-border);
+  color: var(--bg);
+}
+
 .contact {
   background-color: var(--bg);
 }

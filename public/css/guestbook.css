@@ -1,0 +1,103 @@
+@font-face {
+  font-family: 'Manrope';
+  src: url('../fonts/Manrope/Manrope-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --text: #4e6670;
+  --border: #4e6670;
+  --bg: #f2fbff;
+  --bg-2: #e4ecf0;
+  --entry-bg: #ffffff;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 2rem 1rem;
+  background: var(--bg-2);
+  color: var(--text);
+  font-family: 'Manrope', sans-serif;
+}
+
+main {
+  width: min(850px, 100%);
+  margin: 0 auto;
+}
+
+/*********************************************/
+.guestbook-header {
+  text-align: center;
+}
+
+/*********************************************/
+.guestbook-form-section {
+  padding: 2rem;
+}
+
+.guestbook-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.guestbook-form label {
+  font-weight: 600;
+}
+
+.guestbook-name-row,
+.guestbook-message-row {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.guestbook-name-row > div {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.guestbook-name-row input {
+  flex: 1;
+  min-width: 0;
+}
+
+.guestbook-message-row textarea {
+  width: 100%;
+  resize: vertical;
+}
+
+/*********************************************/
+.guestbook-entry {
+  padding: 1rem;
+  border: 1px solid var(--border);
+  background: var(--entry-bg);
+}
+
+.guestbook-entry {
+  margin-top: 0.5rem;
+}
+
+.entry-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: baseline;
+  margin-bottom: 0.65rem;
+}
+
+.entry-meta strong {
+  color: #106e27;
+  font-weight: 800;
+}
+
+.entry-meta span {
+  font-size: 0.8rem;
+}
+
+.guestbook-entry p {
+  margin: 0;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}

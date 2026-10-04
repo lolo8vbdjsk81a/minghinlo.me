@@ -1,9 +1,12 @@
+<?php
+declare(strict_types=1);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Lolo's playground</title>
   <link rel="icon" type="image/x-icon" href="assets/images/junko.ico">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/index.css">
   <script src="assets/js/pageload.js" defer></script>
 </head>
 <body>
@@ -53,14 +56,20 @@
       </div>
     </section>
 
-
     <section id="projects" class="section projects">
       <div class="container">
-	      <h2>Projects</h2>
+	    <h2>Projects</h2>
         <div class="project-button"><a href="./HTML5Grid.html">VisualAlgebra</a></div>
       </div>
     </section>
-    
+
+    <section id="playground" class="section playground">
+      <div class="container">
+	    <h2>Playground</h2>
+        <div class="playground-button"><a href="./guestbook.php">Guestbook</a></div>
+      </div>
+    </section>
+
     <section id="contact" class="section contact">
       <div class="container">
         <h2>Contact</h2>
@@ -79,7 +88,7 @@
 	<footer>
 	  <div class="container">
     	<div class="footerContainer">
-			<img src="assets/images/footer-lolo.png" alt="footer-lolo">
+		    <img src="assets/images/footer-lolo.png" alt="footer-lolo">
 			<p>&copy; 2024-2026 Lolo. All rights reserved.</p>
     	  <!--<p><a href="pages/visualalgebra-privacy-policy.html">VisualAlgebra Privacy Policy</a></p>-->
     	</div>
