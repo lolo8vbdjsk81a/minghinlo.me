@@ -18,6 +18,7 @@ services:
       - "80"
     networks:
       - nginx-proxy-net
+      - homepage-db-net
 
   db:
     image: mariadb:12.3
@@ -32,6 +33,8 @@ services:
       - mariadb_data:/var/lib/mysql
       - ./database/init:/docker-entrypoint-initdb.d:ro
     command: --event-scheduler=ON
+    networks:
+      - homepage-db-net
 
 volumes:
   mariadb_data:
@@ -40,3 +43,5 @@ networks:
   nginx-proxy-net:
     external: true
 
+  homepage-db-net:
+    driver: bridge
