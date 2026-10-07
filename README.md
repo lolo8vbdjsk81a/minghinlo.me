@@ -31,3 +31,7 @@ Open the website:
 ```
 http://localhost:8080
 ```
+
+## License
+- **Code Base:** Licensed under the [MIT License](LICENSE).
+- **Art & Media Assets:** All files located in the `images/` directory are **All Rights Reserved** and Copyright (c) 2026 Lolo. You may not reuse or redistribute these assets without permission.
