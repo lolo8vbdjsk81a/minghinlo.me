@@ -7,6 +7,7 @@ declare(strict_types=1);
   <title>Lolo's playground</title>
   <link rel="icon" type="image/x-icon" href="assets/images/junko.ico">
   <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="./css/shared.css">
   <script src="assets/js/pageload.js" defer></script>
 </head>
 <body>
@@ -15,16 +16,16 @@ declare(strict_types=1);
   </div>
 
   <header>
-    <div class='container'>
-      <div class="logo-area">
-        <div class="logo">
-		  <img src="assets/images/logo.png" alt="Logo">
-          <a href="/">MINGHINLO.ME</a>
-        </div>
-        <div class="external-links">
-          <a href="https://github.com/lolo8vbdjsk81a/" target="_blank">GitHub</a>
-          <a href="https://www.pixiv.net/en/users/22227622" target="_blank">Pixiv</a>
-        </div>
+    <div class="cnt logo-area">
+      <a class="logo" href="/">
+	    <img src="assets/images/logo.png" alt="Logo">
+        <span>MINGHINLO.ME</span>
+      </a>
+      <div class="external-links">
+        <a href="https://github.com/lolo8vbdjsk81a/" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/leo-ming-hin-lo" target="_blank">LinkedIn</a>
+        <a href="https://leetcode.com/u/lolo673452/" target="_blank">LeetCode</a>
+        <a href="https://www.pixiv.net/en/users/22227622" target="_blank">Pixiv</a>
       </div>
     </div>
     <!-- <img src="assets/images/header.jpg" alt="Header"> -->
@@ -36,11 +37,11 @@ declare(strict_types=1);
     <a href="#contact">CONTACT</a>
   </nav>
 
-	<hr>
+  <hr>
 
   <main>
     <section id="about" class="section about">
-      <div class="container">
+      <div class="cnt">
         <h2>About</h2>
         <div class="aboutContent">
           <div class="avatar"><img src="assets/images/avatar.png" alt="Avatar"></div>
@@ -49,7 +50,7 @@ declare(strict_types=1);
               HKUST BEng Computer Science year 2 student. Former HKU SPACE associate degree student. Interest includes but not limited to computer stuffs, mathematics, and digital art. Also self-learning Japanese right now, preparing for next N2 exam.
             </p>
             <p>
-              Currently doing a one year internship at Hospital Authority.
+              Currently doing a one year internship at Hospital Authority, doing infrastructure related works.
             </p>
           </div>
         </div>
@@ -57,21 +58,21 @@ declare(strict_types=1);
     </section>
 
     <section id="projects" class="section projects">
-      <div class="container">
-	    <h2>Projects</h2>
+      <div class="cnt">
+        <h2>Projects</h2>
         <div class="project-button"><a href="./HTML5Grid.html">VisualAlgebra</a></div>
       </div>
     </section>
 
     <section id="playground" class="section playground">
-      <div class="container">
-	    <h2>Playground</h2>
+      <div class="cnt">
+        <h2>Playground</h2>
         <div class="playground-button"><a href="./guestbook.php">Guestbook</a></div>
       </div>
     </section>
 
     <section id="contact" class="section contact">
-      <div class="container">
+      <div class="cnt">
         <h2>Contact</h2>
         <p><b>Email:</b>
           <br>
@@ -85,15 +86,13 @@ declare(strict_types=1);
     </section>
   </main>
 
-	<footer>
-	  <div class="container">
-    	<div class="footerContainer">
-		    <img src="assets/images/footer-lolo.png" alt="footer-lolo">
-			<p>&copy; 2024-2026 Lolo. All rights reserved.</p>
-    	  <!--<p><a href="pages/visualalgebra-privacy-policy.html">VisualAlgebra Privacy Policy</a></p>-->
-    	</div>
-	  </div>
-	</footer>
+  <footer>
+    <div class="cnt footerCnt">
+  	  <img src="assets/images/footer-lolo.png" alt="footer-lolo" loading="lazy">
+      <p>&copy; 2024-<?= date('Y') ?> Lolo. All rights reserved.</p>
+  	  <!--<p><a href="pages/visualalgebra-privacy-policy.html">VisualAlgebra Privacy Policy</a></p>-->
+    </div>
+  </footer>
 
 </body>
 </html>
