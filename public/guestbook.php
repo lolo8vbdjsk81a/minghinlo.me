@@ -9,20 +9,15 @@ $errors = [];
 $name = '';
 $message = '';
 
-function createCaptcha(): void
-{
-    $firstNumber = random_int(1, 9);
-    $secondNumber = random_int(1, 9);
+function createCaptcha(): void {
+    $a = random_int(1, 9);
+    $b = random_int(1, 9);
 
-    $_SESSION['captcha_question'] = "{$firstNumber} + {$secondNumber}";
-    $_SESSION['captcha_answer'] = (string) ($firstNumber + $secondNumber);
+    $_SESSION['captcha_question'] = "{$a} + {$b}";
+    $_SESSION['captcha_answer'] = (string) ($a + $b);
 }
 
-if (
-    !isset($_SESSION['captcha_question'], $_SESSION['captcha_answer'])
-    || !is_string($_SESSION['captcha_question'])
-    || !is_string($_SESSION['captcha_answer'])
-) {
+if (!isset($_SESSION['captcha_question'], $_SESSION['captcha_answer'])) {
     createCaptcha();
 }
 
@@ -76,7 +71,7 @@ $entries = $pdo->query(
     'SELECT id, name, message, created_at
      FROM guestbook_entries
      ORDER BY created_at DESC'
-)->fetchAll();
+)->fetchAll(); // array
 
 ?>
 
@@ -87,6 +82,7 @@ $entries = $pdo->query(
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>lolochannel</title>
   <link rel="stylesheet" href="./css/guestbook.css">
+  <link rel="stylesheet" href="./css/shared.css">
 </head>
 <body>
   <main>
@@ -158,7 +154,19 @@ $entries = $pdo->query(
         </article>
       <?php endforeach; ?>
     </section>
+
+    <a class="admin-login-btn" href="./admin/login.php">
+      Admin login
+    </a>
   </main>
+<!--
+  <footer>
+    <div class="cnt footerCnt">
+  	  <img src="assets/images/footer-lolo.png" alt="footer-lolo" loading="lazy">
+      <p>&copy; 2024-<?= date('Y') ?> Lolo. All rights reserved.</p>
+    </div>
+  </footer>
+-->
 </body>
 </html>
 
