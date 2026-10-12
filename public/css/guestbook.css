@@ -6,19 +6,37 @@
   font-display: swap;
 }
 :root {
-  --text: #4e6670;
-  --border: #4e6670;
+  --global-text: #4e6670;
+  --global-border: #4e6670;
   --bg: #f2fbff;
-  --bg-2: #e4ecf0;
+  --bg-2: #E4ECF0;
+  --footer: #FFFFFF;
+
+  --font-body: 'Manrope', sans-serif;
+  --font-heading: 'Comfortaa', sans-serif;
+
+  --content-max: 1200px;
+  --page-gutter: clamp(1rem, 4vw, 2.5rem);
+
+  --outline-border: 2px solid var(--global-border);
+
+  --texture-color: rgb(78 102 112 / 0.12);
+  --texture-size: 6px;
+
   --entry-bg: #ffffff;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 *, *::before, *::after { box-sizing: border-box; }
 body {
   margin: 0;
   padding: 2rem 1rem;
   background: var(--bg-2);
-  color: var(--text);
-  font-family: 'Manrope', sans-serif;
+  color: var(--global-text);
+  font-family: var(--font-body);
 }
 
 main {
@@ -71,7 +89,7 @@ main {
 /*********************************************/
 .guestbook-entry {
   padding: 1rem;
-  border: 1px solid var(--border);
+  border: 1px solid var(--global-border);
   background: var(--entry-bg);
 }
 
@@ -100,4 +118,9 @@ main {
   margin: 0;
   line-height: 1.6;
   overflow-wrap: anywhere;
+}
+
+.admin-login-btn {
+  display: flex;
+  justify-content: center;
 }

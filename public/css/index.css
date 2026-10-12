@@ -12,12 +12,24 @@
   font-style: normal;
   font-display: swap;
 }
+
 :root {
   --global-text: #4e6670;
   --global-border: #4e6670;
   --bg: #f2fbff;
   --bg-2: #E4ECF0;
   --footer: #FFFFFF;
+
+  --font-body: 'Manrope', sans-serif;
+  --font-heading: 'Comfortaa', sans-serif;
+
+  --content-max: 1200px;
+  --page-gutter: clamp(1rem, 4vw, 2.5rem);
+
+  --outline-border: 2px solid var(--global-border);
+
+  --texture-color: rgb(78 102 112 / 0.12);
+  --texture-size: 6px;
 }
 * {
   margin: 0;
@@ -25,28 +37,31 @@
   box-sizing: border-box;
 }
 
-
 html {
   font-size: 100%;
 }
 
 h1, h2, h3 {
-  font-family: 'Comfortaa', sans-serif;
+  font-family: var(--font-heading);
 }
 
 body {
-  background-color: #f2fbff;
-  font-family: 'Manrope', sans-serif;
+  background-color: var(--bg);
+  font-family: var(--font-body);
   color: var(--global-text);
   letter-spacing: 0.03em;
 }
-
-.container {
-  padding: 0 2.5rem;
-  max-width: 1200px;
+.cnt {
+  width: 100%;
+  padding: 0 var(--page-gutter);;
+  max-width: var(--content-max);
   margin: 0 auto;
 }
+a, a:visited, a:hover, a:active {
+  color: inherit;
+}
 
+/*********************** Header ***********************/
 header {
   padding: 2rem 0 0 0;
   letter-spacing: 0.08em;
@@ -58,6 +73,7 @@ header img {
 }
 .logo-area {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   font-family: 'Comfortaa', sans-serif;
   align-items: center;
@@ -66,37 +82,58 @@ header img {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  text-decoration: none;
+  margin: 10px;
 }
-.logo a {
+.logo span {
   font-size: 1.5rem;
   text-decoration: none;
   color: inherit;
 }
-
 .external-links {
   display: flex;
   gap: 1rem;
 }
-
+.external-links a {
+  text-decoration: none;
+}
 .nav {
   position: sticky;
   top: 0;
   z-index: 999;
   background-color: var(--bg);
+
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+
+  column-gap: clamp(0.75rem, 3vw, 2.25rem);
+  row-gap: 0.5rem;
+
   letter-spacing: 0.08em;
-  padding: 1rem 0;
+  padding: 1rem var(--page-gutter);
 }
 .nav a {
   font-size: 1rem;
-  padding: 0 1.125rem;
+  padding: 0 1.2rem;
   text-decoration: none;
 }
+/*********************** Header ***********************/
 
 
+
+/*********************** Main ***********************/
 section {
   background-color: var(--bg);
+  background-image: radial-gradient(
+    circle,
+    var(--texture-color) 0.6px,
+    transparent 0.8px
+  );
+  background-size: var(--texture-size) var(--texture-size);
+
+  font-family: var(--font-body);
+  color: var(--global-text);
 }
 section:nth-child(odd) {
   background-color: var(--bg-2);
@@ -133,7 +170,7 @@ section:nth-child(odd) {
   display: block;
   padding: 22px 10px;
   text-decoration: none;
-  border: 2px solid var(--global-border);
+  border: var(--outline-border);
   text-align: center;
   color: var(--global-text);
   background: var(--bg);
@@ -149,32 +186,13 @@ section:nth-child(odd) {
 .contact {
   background-color: var(--bg);
 }
-
-a, a:visited, a:hover, a:active {
-  color: inherit;
-}
-
-footer {
-  min-height: 100vh;
-  background-color: var(--footer);
-  display: flex;
-  justify-content: center;
-}
-
-.footerContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 3rem;
-  padding: 2.5rem;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+/*********************** Main ***********************/
 
 
 
-/* Animations */
+
+
+/*********************** Animation ***********************/
 .page-loader {
   position: fixed;
   top: 0;
@@ -193,7 +211,6 @@ footer {
   width: 40px;
   height: 40px;
   border: 4px solid var(--global-border);
-  border-top: 4px solid var(--global-text);
   border-top-color: #333;
   border-radius: 50%;
   animation: spin 1s linear infinite;
@@ -204,4 +221,5 @@ footer {
 	transform: rotate(360deg);
   }
 }
+/*********************** Animation ***********************/
 
