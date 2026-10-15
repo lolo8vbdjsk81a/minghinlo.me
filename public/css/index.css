@@ -1,41 +1,8 @@
-@font-face {
-  font-family: 'Manrope';
-  src: url('../fonts/Manrope/Manrope-VariableFont_wght.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Comfortaa';
-  src: url('../fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-:root {
-  --global-text: #4e6670;
-  --global-border: #4e6670;
-  --bg: #f2fbff;
-  --bg-2: #E4ECF0;
-  --footer: #FFFFFF;
-
-  --font-body: 'Manrope', sans-serif;
-  --font-heading: 'Comfortaa', sans-serif;
-
-  --content-max: 1200px;
-  --page-gutter: clamp(1rem, 4vw, 2.5rem);
-
-  --outline-border: 2px solid var(--global-border);
-
-  --texture-color: rgb(78 102 112 / 0.12);
-  --texture-size: 6px;
-}
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
+*, *::before, *::after { box-sizing: border-box; }
 
 html {
   font-size: 100%;

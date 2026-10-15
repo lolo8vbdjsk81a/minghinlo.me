@@ -1,39 +1,18 @@
-@font-face {
-  font-family: 'Manrope';
-  src: url('../fonts/Manrope/Manrope-VariableFont_wght.ttf') format('truetype');
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
 :root {
-  --global-text: #4e6670;
-  --global-border: #4e6670;
-  --bg: #f2fbff;
-  --bg-2: #E4ECF0;
-  --footer: #FFFFFF;
-
-  --font-body: 'Manrope', sans-serif;
-  --font-heading: 'Comfortaa', sans-serif;
-
-  --content-max: 1200px;
-  --page-gutter: clamp(1rem, 4vw, 2.5rem);
-
-  --outline-border: 2px solid var(--global-border);
-
-  --texture-color: rgb(78 102 112 / 0.12);
-  --texture-size: 6px;
-
   --entry-bg: #ffffff;
 }
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 *, *::before, *::after { box-sizing: border-box; }
+
+html {
+  font-size: 100%;
+}
+
 body {
   margin: 0;
-  padding: 2rem 1rem;
   background: var(--bg-2);
   color: var(--global-text);
   font-family: var(--font-body);
@@ -44,12 +23,27 @@ main {
   margin: 0 auto;
 }
 
-/*********************************************/
+
+/*********************** Back button ***********************/
+.back-btn {
+  display: block;
+  width: fit-content;
+  margin: 1rem 0;
+  color: inherit;
+  text-decoration: none;
+}
+/*********************** Back button ***********************/
+
+/*********************** Header ***********************/
 .guestbook-header {
+  padding-top: 2rem;
   text-align: center;
 }
+/*********************** Header ***********************/
 
-/*********************************************/
+
+
+/*********************** User input ***********************/
 .guestbook-form-section {
   padding: 2rem;
 }
@@ -85,8 +79,11 @@ main {
   width: 100%;
   resize: vertical;
 }
+/*********************** User input ***********************/
 
-/*********************************************/
+
+
+/*********************** Entry ***********************/
 .guestbook-entry {
   padding: 1rem;
   border: 1px solid var(--global-border);
@@ -119,8 +116,14 @@ main {
   line-height: 1.6;
   overflow-wrap: anywhere;
 }
+/*********************** Entry ***********************/
 
 .admin-login-btn {
-  display: flex;
-  justify-content: center;
+  display: block;
+  width: fit-content;
+  margin-inline: auto;
+  margin-block: 0.5rem;
+  font-size: 0.75rem;
+  color: inherit;
+  text-decoration: none;
 }

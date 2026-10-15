@@ -86,6 +86,7 @@ $entries = $pdo->query(
 </head>
 <body>
   <main>
+    <a class="back-btn" href="/">← Home</a>
     <header class="guestbook-header">
       <h1>lolochannel</h1>
       <p>
@@ -158,15 +159,14 @@ $entries = $pdo->query(
     <a class="admin-login-btn" href="./admin/login.php">
       Admin login
     </a>
+
   </main>
-<!--
   <footer>
     <div class="cnt footerCnt">
   	  <img src="assets/images/footer-lolo.png" alt="footer-lolo" loading="lazy">
       <p>&copy; 2024-<?= date('Y') ?> Lolo. All rights reserved.</p>
     </div>
   </footer>
--->
 </body>
 </html>
 
