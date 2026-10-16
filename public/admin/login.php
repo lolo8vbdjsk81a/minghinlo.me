@@ -9,24 +9,44 @@ if (isset($_SESSION['admin_id'])) {
     exit;
 }
 
+if (!isset($_SESSION['login_csrf'])) {
+    $_SESSION['login_csrf'] = bin2hex(random_bytes(32));
+}
+
 $errors = [];
-$userame = '';
+$username = '';
+$password = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = is_string($_POST['username'] ?? null)
-        ? trim($_POST['username'])
-        : '';
+    $username = is_string($_POST['username'] ?? null) ? trim($_POST['username']) : '';
+    $password = is_string($_POST['password'] ?? null) ? $_POST['password'] : '';
+    $token = is_string($_POST['csrf_token'] ?? null) ? $_POST['csrf_token'] : '';
 
-    $password = is_string($_POST['password'] ?? null)
-        ? $_POST['password']
-        : '';
-
-    $token = $_POST['csrf_token'] ?? '';
+    if (!hash_equals($_SESSION['login_csrf'], $token)) {
+        $error[] = 'Invalid request. Please try again.';
+    }
 
     if ($username === '' || $password === '') {
-        $errors[] = 'Enter your username and password.';
-    } else {
-        
+        $errors[] = 'Please fill in all fields.';
+    }
+
+    if (empty($errors)) {
+        $stmt = $pdo->prepare('SELECT id, password_hash FROM admins WHERE username = ?');
+        $stmt->execute([$username]);
+        $admin = $stmt->fetch();
+
+        if ($admin && password_verify($password, $admin['password_hash'])) {
+            // Prevent session fixation attacks
+            session_regenerate_id(true);
+
+            $_SESSION['admin_id'] = $admin['id'];
+            unset($_SESSION['login_csrf']);
+
+            header('Location: /admin/admin.php');
+            exit;
+        } else {
+            $errors[] = 'Invalid username or password.';
+        }
     }
 }
 ?>
@@ -48,6 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <input
       type="hidden"
       name="csrf_token"
+      value="<?= htmlspecialchars($_SESSION['login_csrf'], ENT_QUOTES, 'UTF-8') ?>"
     >
 
     <div>
