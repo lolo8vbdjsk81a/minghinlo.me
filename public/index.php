@@ -5,7 +5,7 @@ declare(strict_types=1);
 <html lang="en">
 <head>
   <title>Lolo's playground</title>
-  <link rel="icon" type="image/x-icon" href="assets/images/junko.ico">
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="./css/shared.css">
   <script src="assets/js/pageload.js" defer></script>

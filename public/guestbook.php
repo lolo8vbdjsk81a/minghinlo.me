@@ -81,6 +81,7 @@ $entries = $pdo->query(
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>lolochannel</title>
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
   <link rel="stylesheet" href="./css/guestbook.css">
   <link rel="stylesheet" href="./css/shared.css">
 </head>
