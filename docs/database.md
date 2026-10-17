@@ -26,3 +26,6 @@ erDiagram
         TIMESTAMP     deleted_at
     }
 ```
+
+## Commands
+`docker exec -it lolo-homepage-db mariadb -u ${MARIADB_USER} -p${MARIADB_PASSWORD} ${MARIADB_DATABASE}`
