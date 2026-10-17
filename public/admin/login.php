@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (empty($errors)) {
-        $stmt = $pdo->prepare('SELECT id, password_hash FROM admins WHERE username = ?');
+        $stmt = $pdo->prepare('SELECT id, password_hash FROM admin WHERE username = ?');
         $stmt->execute([$username]);
         $admin = $stmt->fetch();
 

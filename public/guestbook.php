@@ -60,17 +60,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['captcha_answer']
         );
 
-        header('Location: guestbook.php?posted=1');
+        header('Location: guestbook.php?posted=1', true, 303);
         exit;
     }
 }
 
 $postsPerPage = 20;
 
+// Filter out deleted entries
 $entries = $pdo->query(
-    'SELECT id, name, message, created_at
-     FROM guestbook_entries
-     ORDER BY created_at DESC'
+    'SELECT e.id, e.name, e.message, e.created_at
+     FROM guestbook_entries AS e
+     WHERE NOT EXISTS (
+         SELECT 1
+         FROM guestbook_deletions AS d
+         WHERE d.entry_id = e.id
+     )
+     ORDER BY e.created_at DESC, e.id DESC'
 )->fetchAll(); // array
 
 ?>
