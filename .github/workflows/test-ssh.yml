@@ -1,0 +1,37 @@
+name: Test SSH authentication
+
+on:
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  test-ssh:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Connect to Tailscale
+        uses: tailscale/github-action@v4
+        with:
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          tags: tag:ci
+
+      - name: Test SSH key authentication
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          VPS_USER: ${{ secrets.VPS_USER }}
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+
+          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/github-actions-lolo-homepage
+          chmod 600 ~/.ssh/github-actions-lolo-homepage
+
+          ssh -v \
+            -o BatchMode=yes \
+            -o PreferredAuthentications=publickey \
+            -o StrictHostKeyChecking=no \
+            "$VPS_USER@$VPS_HOST" \
+            'whoami'
