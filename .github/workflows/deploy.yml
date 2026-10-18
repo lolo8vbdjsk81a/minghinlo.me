@@ -19,14 +19,14 @@ jobs:
           tags: tag:ci
 
       - name: Deploy to VPS
+        env:
+          VPS_USER: ${{ secrets.VPS_USER }}
+          VPS_HOST: ${{ secrets.VPS_HOST }}
         run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/github-actions-lolo-homepage
-          chmod 600 ~/.ssh/github-actions-lolo-homepage
-          ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} "
+          tailscale ssh "$VPS_USER@$VPS_HOST" '
             cd ~/docker/minghinlo.me &&
             git pull &&
             docker compose down &&
             docker compose build --no-cache &&
             docker compose up -d
-          "
+          '

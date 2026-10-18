@@ -1,4 +1,4 @@
-name: Test SSH authentication
+name: Test Tailscale connectivity
 
 on:
   workflow_dispatch:
@@ -6,8 +6,9 @@ on:
 permissions: {}
 
 jobs:
-  test-ssh:
+  test-connectivity:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
 
     steps:
       - name: Connect to Tailscale
@@ -17,21 +18,8 @@ jobs:
           oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
           tags: tag:ci
 
-      - name: Test SSH key authentication
+      - name: Test VPS connectivity
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          VPS_USER: ${{ secrets.VPS_USER }}
           VPS_HOST: ${{ secrets.VPS_HOST }}
         run: |
-          mkdir -p ~/.ssh
-          chmod 700 ~/.ssh
-
-          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/github-actions-lolo-homepage
-          chmod 600 ~/.ssh/github-actions-lolo-homepage
-
-          ssh -v \
-            -o BatchMode=yes \
-            -o PreferredAuthentications=publickey \
-            -o StrictHostKeyChecking=no \
-            "$VPS_USER@$VPS_HOST" \
-            'whoami'
+          tailscale ping --c=3 --timeout=5s --until-direct=false "$VPS_HOST"
