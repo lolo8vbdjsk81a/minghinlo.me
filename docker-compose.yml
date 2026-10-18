@@ -19,6 +19,14 @@ services:
     networks:
       - nginx-proxy-net
       - homepage-db-net
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: 128M
+        reservations:
+          cpus: '0.05'
+          memory: 32M
 
   db:
     image: mariadb:12.3
@@ -35,6 +43,14 @@ services:
     command: --event-scheduler=ON
     networks:
       - homepage-db-net
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: 256M
+        reservations:
+          cpus: '0.05'
+          memory: 64M
 
 volumes:
   mariadb_data:

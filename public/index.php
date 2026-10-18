@@ -60,7 +60,7 @@ declare(strict_types=1);
     <section id="projects" class="section projects">
       <div class="cnt">
         <h2>Projects</h2>
-        <div class="project-button"><a href="./HTML5Grid.html">VisualAlgebra</a></div>
+        <div class="project-button"><a href="./HTML5Grid.html">nonamegrapher (VisualAlgebra)</a></div>
       </div>
     </section>
 
