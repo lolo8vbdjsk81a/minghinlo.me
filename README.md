@@ -13,7 +13,7 @@ It is built with a LAMP-style stack running in Docker:
 - Docker Compose
 
 ## Local development
-Create a local `.env` file in the root of the repository:
+Create a local `.env` file in your preferred location, for example `.env` in the project root:
 ```env
 LETSENCRYPT_EMAIL=email@example.com
 MARIADB_DATABASE=homepage
@@ -24,7 +24,7 @@ MARIADB_ROOT_PASSWORD=change-this-root-password
 
 Start the local stack:
 ```bash
-docker compose -f docker-compose.local.yml up -d --build
+docker compose --env-file .env -f docker-compose.local.yml up -d --build
 ```
 
 Open the website:

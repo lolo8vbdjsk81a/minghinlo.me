@@ -24,7 +24,7 @@ jobs:
           VPS_HOST: ${{ secrets.VPS_HOST }}
         run: |
           tailscale ssh "$VPS_USER@$VPS_HOST" '
-            cd ~/docker/minghinlo.me &&
+            cd /opt/minghinlo.me &&
             git pull &&
             docker compose down &&
             docker compose build --no-cache &&
